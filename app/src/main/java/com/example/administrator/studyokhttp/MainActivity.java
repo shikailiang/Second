@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.studyokhttp.bean.Bean;
@@ -37,11 +39,13 @@ public class MainActivity extends AppCompatActivity implements GetIner, SetOnCli
             }
         }
     };
+    private TextView btn_feature_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn_feature_2 = (TextView) findViewById(R.id.btn_feature_2);
         //初始化view
         initdata();
         //网络请求数据异步请求
@@ -78,5 +82,12 @@ public class MainActivity extends AppCompatActivity implements GetIner, SetOnCli
     @Override
     public void onClick(int position) {
         Toast.makeText(MainActivity.this, list.get(position).getTitle(), Toast.LENGTH_LONG).show();
+    }
+    public void feature2(View view) {
+        if (btn_feature_2.getText().toString().equals("功能2")) {
+            btn_feature_2.setText("功能3");
+        } else {
+            btn_feature_2.setText("功能一");
+        }
     }
 }
