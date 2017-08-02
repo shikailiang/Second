@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements GetIner, SetOnCli
         btn_feature_2 = (TextView) findViewById(R.id.btn_feature_2);
         //初始化view
         initdata();
-        //网络请求数据异步请求
 //        OkhttpUtils.getOk("http://news-at.zhihu.com/api/4/news/latest", this);
     }
 
